@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Obfuscator</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script type="module" src="./script.ts"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Email Obfuscator Webcomponent</h1>
+      <obfuscated-email-address src="./mtz1m1drhwt.png"></obfuscated-email-address>
+    </main>
+    <script type="module">
+      // Temp: For bundler to properly set the url
+      import imgSrc from "./mtz1m1drhwt.png";
+      addEventListener("load", () => {
+        const el = document.getElementsByTagName("obfuscated-email-address")[0];
+        el.setAttribute("src", imgSrc);
+      });
+    </script>
+  </body>
+</html>

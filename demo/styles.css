@@ -5,7 +5,11 @@
 
 html {
   color-scheme: light dark;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -13,6 +17,21 @@ main {
   margin: auto;
 }
 
-h1 {
+h1,
+p,
+obfuscated-email-address {
   text-align: center;
+}
+
+obfuscated-email-address {
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+}
+
+footer {
+  padding-block-start: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }

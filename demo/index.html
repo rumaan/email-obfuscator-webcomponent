@@ -4,18 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Obfuscator</title>
+    <title>Email Obfuscator Webcomponent</title>
     <link href="./styles.css" rel="stylesheet" />
     <script type="module" src="./script.ts"></script>
   </head>
   <body>
     <main>
       <h1>Email Obfuscator Webcomponent</h1>
-      <obfuscated-email-address src="./mtz1m1drhwt.png"></obfuscated-email-address>
+
+      <p>
+        'Right Click + View Page Source' to see if this 👇 email address is present in the
+        source.
+      </p>
+
+      <obfuscated-email-address
+        src="./jkvu1o0le24.png"
+      ></obfuscated-email-address>
     </main>
+    <footer>
+      <a
+        href="https://github.com/rumaan/email-obfuscator-webcomponent"
+        target="_blank"
+        rel="noreferrer"
+        >Source</a
+      >
+      <a
+        href="https://creativetechguy.com/utilities/emailobfuscator"
+        target="_blank"
+        rel="noreferrer"
+        >Email Obfuscator</a
+      >
+    </footer>
     <script type="module">
       // Temp: For bundler to properly set the url
-      import imgSrc from "./mtz1m1drhwt.png";
+      import imgSrc from "./jkvu1o0le24.png";
       addEventListener("load", () => {
         const el = document.getElementsByTagName("obfuscated-email-address")[0];
         el.setAttribute("src", imgSrc);

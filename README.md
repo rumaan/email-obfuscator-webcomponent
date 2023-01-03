@@ -7,14 +7,14 @@ Demo: https://email-obfuscator-webcomponent-demo.vercel.app/
 
 ## Features
 
-- No External Deps & Lightweight (~ 1kB gzipped) ✨
-- Web Component = Can be used with any JS library that works with HTML 🥳
-- Deobfuscated using JS/Canvas (Scrape bots no likey JS 🫠)
-- Customisable with Slots [(soon! see todos)](#todo) 🛠️
-- Written in Typescript 💪
+- ✨ No External Deps & Lightweight (~ 1kB gzipped)
+- 👀 Web Component = Can be used with any JS library that works with HTML
+- 🥳 Deobfuscated using JS/Canvas (Scrape bots no likey JS!)
+- 🛠️ Customisable with Slots [(soon! see todos)](#todo)
+- 💪 Written in Typescript
 
 ## Installation & Usage
-[![NPM](https://nodei.co/npm/email-obfuscator-webcomponent.png?mini=true)](https://npmjs.org/package/email-obfuscator-webcomponent)
+
 ```sh
 # npm
 npm install email-obfuscator-webcomponent

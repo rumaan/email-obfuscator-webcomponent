@@ -2,7 +2,7 @@
   "name": "email-obfuscator-webcomponent",
   "type": "module",
   "version": "0.0.1",
-  "description": "Web Component that Obfuscates Email address in HTML source.",
+  "description": "A simple Web Component that Obfuscates Email address in HTML source.",
   "source": "index.ts",
   "main": "./dist/index.js",
   "types": "./dist/types.d.ts",
@@ -27,5 +27,17 @@
   "files": [
     "dist"
   ],
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "keywords": [
+    "email obfuscator",
+    "webcomponent"
+  ],
+  "repository": {
+    "url": "git+https://github.com/rumaan/email-obfuscator-webcomponent.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/rumaan/email-obfuscator-webcomponent/issues"
+  },
+  "homepage": "https://email-obfuscator-webcomponent-demo.vercel.app/"
 }

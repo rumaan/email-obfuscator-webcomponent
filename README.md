@@ -8,7 +8,7 @@ Demo: https://email-obfuscator-webcomponent-demo.vercel.app/
 
 - No External Deps & Lightweight (~ 1kB gzipped) ✨
 - Web Component = Can be used with any JS library that works with HTML 🥳
-- Obfuscated using JS/Canvas (Scrape bots no likey JS 🫠)
+- Deobfuscated using JS/Canvas (Scrape bots no likey JS 🫠)
 - Customisable with Slots [(soon! see todos)](#todo) 🛠️
 - Written in Typescript 💪
 

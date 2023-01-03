@@ -33,10 +33,10 @@ For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.htm
 
 ## TODOS
 
-- [] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
-- [] Export webcomponent types
-- [] Tests
-- [] Readme with examples using in React, Vue etc.
+- [ ] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
+- [ ] Export webcomponent types
+- [ ] Tests
+- [ ] Readme with examples using in React, Vue etc.
 
 ## Credits
 Decoder code is basically a slightly modified / Typescriptified version of [Email Obfuscator](https://creativetechguy.com/utilities/emailobfuscator) by Jason O'Neill

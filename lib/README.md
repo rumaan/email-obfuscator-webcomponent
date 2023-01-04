@@ -41,14 +41,15 @@ or in browser end of `<body>` tag
 For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.html#example-vite-config) for example, you might need to configure the bundler so it plays well with web components.
 
 Framework Usages:
-- [Vue](/demo/vue/) - [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
+- [Vue](/demo/vue/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
+- [React](/demo/react/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
 
 ## TODOS
 
 - [ ] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
 - [ ] Export webcomponent types
 - [ ] Tests
-- [ ] Readme with examples using in React, Vue etc.
+- [x] Readme with examples using in React, Vue etc.
 
 ## Credits
 

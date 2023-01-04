@@ -4,7 +4,7 @@
   "description": "Web Component that Obfuscates Email address in HTML source.",
   "scripts": {
     "dev": "vite --config ./demo/vite.config.ts",
-    "build:demo": "vite build --config ./demo/vite.config.ts",
+    "build:demo": "npm run build:lib && vite build --config ./demo/vite.config.ts",
     "preview:demo": "npm run build:lib && vite preview --config ./demo/vite.config.ts",
     "copy-docs": "cp README.md ./lib",
     "build:lib": "npm run copy-docs && npm run build --workspace=lib"

@@ -3,22 +3,23 @@
   "version": "0.0.4-beta-1",
   "description": "Web Component that Obfuscates Email address in HTML source.",
   "scripts": {
-    "dev": "parcel ./demo/index.html",
-    "build:demo": "parcel build ./demo/index.html",
+    "dev": "vite --config ./demo/vite.config.ts",
+    "build:demo": "vite build --config ./demo/vite.config.ts",
     "copy-docs": "cp README.md ./lib",
     "build:lib": "npm run copy-docs && npm run build --workspace=lib"
   },
   "author": "Rumaan K<hey@rumaan.dev>",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.8.2"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.8.2",
-    "@parcel/transformer-typescript-types": "^2.8.2",
+    "@types/node": "^18.11.18",
+    "@vitejs/plugin-vue": "^4.0.0",
     "prettier": "^2.8.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.9.4"
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4"
   },
   "workspaces": [
     "lib"

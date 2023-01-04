@@ -20,11 +20,14 @@ npm install email-obfuscator-webcomponent
 # yarn
 yarn add email-obfuscator-webcomponent
 ```
-or in browser end of `<body>` tag 
+
+or in browser end of `<body>` tag
 
 ```html
-<script type="module" src="https://unpkg.com/email-obfuscator-webcomponent@latest"></script>
-
+<script
+  type="module"
+  src="https://unpkg.com/email-obfuscator-webcomponent@latest"
+></script>
 ```
 
 1. Generate the Encoded image [here](https://creativetechguy.com/utilities/emailobfuscator) and save the image into your public/assets directory
@@ -36,6 +39,9 @@ or in browser end of `<body>` tag
 ```
 
 For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.html#example-vite-config) for example, you might need to configure the bundler so it plays well with web components.
+
+Framework Usages:
+- [Vue](/demo/vue/) - [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
 
 ## TODOS
 

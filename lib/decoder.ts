@@ -1,6 +1,5 @@
 /**
  * Original Source Code: https://creativetechguy.com/utilities/emailobfuscator
- * @author Jason O'Neill
  *
  * @param canvas Offscreen Canvas Element
  * @param img Image Element

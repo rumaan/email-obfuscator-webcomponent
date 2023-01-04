@@ -1,15 +1,12 @@
 import { decodeImage } from "./decoder";
 
 export class ObfuscatedEmailAddress extends HTMLElement {
-  src: string;
-  id: string;
+  src: string = "";
+  #id: string = Math.random().toString().substring(2);
 
   constructor() {
     super();
-
     this.attachShadow({ mode: "open" });
-
-    this.id = Math.random().toString().substring(2);
   }
 
   get styles() {
@@ -29,7 +26,7 @@ export class ObfuscatedEmailAddress extends HTMLElement {
 
   connectedCallback() {
     const wrapper = document.createElement("div");
-    wrapper.id = `wrapper-${this.id}`;
+    wrapper.id = `wrapper-${this.#id}`;
     wrapper.classList.add("wrapper");
 
     const style = document.createElement("style");
@@ -40,12 +37,12 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     loading.classList.add("loading");
 
     const img = document.createElement("img");
-    img.id = `img-${this.id}`;
+    img.id = `img-${this.#id}`;
     img.crossOrigin = "anonymous";
     img.classList.add("image", "hidden");
 
     const canvas = document.createElement("canvas");
-    canvas.id = `canvas-${this.id}`;
+    canvas.id = `canvas-${this.#id}`;
     canvas.classList.add("hidden");
 
     wrapper.appendChild(style);
@@ -69,17 +66,17 @@ export class ObfuscatedEmailAddress extends HTMLElement {
   init() {
     if (this.shadowRoot?.isConnected && this.src) {
       const wrapper = this.shadowRoot.getElementById(
-        `wrapper-${this.id}`
+        `wrapper-${this.#id}`
       ) as HTMLDivElement;
 
       const img = this.shadowRoot.getElementById(
-        `img-${this.id}`
+        `img-${this.#id}`
       ) as HTMLImageElement;
 
       img.src = this.src;
 
       const canvas = this.shadowRoot.getElementById(
-        `canvas-${this.id}`
+        `canvas-${this.#id}`
       ) as HTMLCanvasElement;
 
       if (img.complete && img.naturalHeight !== 0) {

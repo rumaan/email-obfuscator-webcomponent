@@ -1,4 +1,4 @@
 {
-  "buildCommand": "npm run build:docs",
+  "buildCommand": "npm run build:demo",
   "outputDirectory": "demo/dist"
 }

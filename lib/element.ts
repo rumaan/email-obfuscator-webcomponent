@@ -10,32 +10,6 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     this.attachShadow({ mode: "open" });
 
     this.id = Math.random().toString().substring(2);
-
-    const wrapper = document.createElement("div");
-    wrapper.id = `wrapper-${this.id}`;
-    wrapper.classList.add("wrapper");
-
-    const style = document.createElement("style");
-    style.textContent = this.styles;
-
-    const loading = document.createElement("div");
-    loading.textContent = "Loading...";
-    loading.classList.add("loading");
-
-    const img = document.createElement("img");
-    img.id = `img-${this.id}`;
-    img.classList.add("image", "hidden");
-
-    const canvas = document.createElement("canvas");
-    canvas.id = `canvas-${this.id}`;
-    canvas.classList.add("hidden");
-
-    wrapper.appendChild(style);
-    wrapper.appendChild(loading);
-    wrapper.appendChild(img);
-    wrapper.appendChild(canvas);
-
-    this.shadowRoot?.append(wrapper);
   }
 
   get styles() {
@@ -53,13 +27,43 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     return ["src"];
   }
 
+  connectedCallback() {
+    const wrapper = document.createElement("div");
+    wrapper.id = `wrapper-${this.id}`;
+    wrapper.classList.add("wrapper");
+
+    const style = document.createElement("style");
+    style.textContent = this.styles;
+
+    const loading = document.createElement("div");
+    loading.textContent = "Loading...";
+    loading.classList.add("loading");
+
+    const img = document.createElement("img");
+    img.id = `img-${this.id}`;
+    img.crossOrigin = "anonymous";
+    img.classList.add("image", "hidden");
+
+    const canvas = document.createElement("canvas");
+    canvas.id = `canvas-${this.id}`;
+    canvas.classList.add("hidden");
+
+    wrapper.appendChild(style);
+    wrapper.appendChild(loading);
+    wrapper.appendChild(img);
+    wrapper.appendChild(canvas);
+
+    this.shadowRoot?.append(wrapper);
+
+    this.init();
+  }
+
   attributeChangedCallback(
     name: string,
     oldValue: string | null,
     currentValue: string | null
   ) {
     this.src = currentValue ?? "";
-    this.init();
   }
 
   init() {
@@ -71,6 +75,7 @@ export class ObfuscatedEmailAddress extends HTMLElement {
       const img = this.shadowRoot.getElementById(
         `img-${this.id}`
       ) as HTMLImageElement;
+
       img.src = this.src;
 
       const canvas = this.shadowRoot.getElementById(

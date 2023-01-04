@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Obfuscator Webcomponent</title>
     <link href="./styles.css" rel="stylesheet" />
-    <script type="module" src="./script.ts"></script>
   </head>
   <body>
     <main>
       <h1>Email Obfuscator Webcomponent</h1>
 
       <p>
-        'Right Click + View Page Source' to see if this 👇 email address is present in the
-        source.
+        'Right Click + View Page Source' to see if this 👇 email address is
+        present in the source.
       </p>
 
       <obfuscated-email-address
-        src="./jkvu1o0le24.png"
+        src="https://rumaan.dev/jkvu1o0le24.png"
       ></obfuscated-email-address>
     </main>
     <footer>
@@ -35,13 +34,8 @@
         >Email Obfuscator</a
       >
     </footer>
-    <script type="module">
-      // Temp: For bundler to properly set the url
-      import imgSrc from "./jkvu1o0le24.png";
-      addEventListener("load", () => {
-        const el = document.getElementsByTagName("obfuscated-email-address")[0];
-        el.setAttribute("src", imgSrc);
-      });
+    <script src="https://unpkg.com/email-obfuscator-webcomponent@latest" type="module">
+      // import "email-obfuscator-webcomponent";
     </script>
   </body>
 </html>

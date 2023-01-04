@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "parcel ./demo/index.html",
     "build:demo": "parcel build ./demo/index.html",
-    "build:lib": "npm run build --workspace=lib"
+    "copy-docs": "cp README.md ./lib",
+    "build:lib": "npm run copy-docs && npm run build --workspace=lib"
   },
   "author": "Rumaan K<hey@rumaan.dev>",
   "license": "MIT",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@parcel/packager-ts": "^2.8.2",
     "@parcel/transformer-typescript-types": "^2.8.2",
+    "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
   },

@@ -4,7 +4,6 @@ Web component wrapper for [Email Obfuscator](https://creativetechguy.com/utiliti
 
 Demo: https://email-obfuscator-webcomponent-demo.vercel.app/
 
-
 ## Features
 
 - ✨ No External Deps & Lightweight (~ 1kB gzipped)
@@ -40,4 +39,5 @@ For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.htm
 - [ ] Readme with examples using in React, Vue etc.
 
 ## Credits
+
 Decoder code is basically a slightly modified / Typescriptified version of [Email Obfuscator](https://creativetechguy.com/utilities/emailobfuscator) by Jason O'Neill

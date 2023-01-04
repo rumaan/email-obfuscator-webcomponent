@@ -24,14 +24,14 @@ export function decodeImage(
     let arr: Uint8ClampedArray;
     while (y < canvas.height) {
       arr = ctx.getImageData(x, y, 1, 1).data;
-      if (arr[3] == 0) {
+      if (arr[3] === 0) {
         break;
       }
       block +=
         String.fromCharCode(arr[0]) +
         String.fromCharCode(arr[1]) +
         String.fromCharCode(arr[2]);
-      if (++x == width) {
+      if (++x === width) {
         x = 0;
         y++;
       }

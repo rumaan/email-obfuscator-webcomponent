@@ -4,7 +4,6 @@ Web component wrapper for [Email Obfuscator](https://creativetechguy.com/utiliti
 
 Demo: https://email-obfuscator-webcomponent-demo.vercel.app/
 
-
 ## Features
 
 - ✨ No External Deps & Lightweight (~ 1kB gzipped)
@@ -20,6 +19,12 @@ Demo: https://email-obfuscator-webcomponent-demo.vercel.app/
 npm install email-obfuscator-webcomponent
 # yarn
 yarn add email-obfuscator-webcomponent
+```
+or in browser end of `<body>` tag 
+
+```html
+<script type="module" src="https://unpkg.com/email-obfuscator-webcomponent@latest"></script>
+
 ```
 
 1. Generate the Encoded image [here](https://creativetechguy.com/utilities/emailobfuscator) and save the image into your public/assets directory
@@ -40,4 +45,5 @@ For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.htm
 - [ ] Readme with examples using in React, Vue etc.
 
 ## Credits
+
 Decoder code is basically a slightly modified / Typescriptified version of [Email Obfuscator](https://creativetechguy.com/utilities/emailobfuscator) by Jason O'Neill

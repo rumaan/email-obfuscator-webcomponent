@@ -1,33 +1,39 @@
 {
   "name": "email-obfuscator-webcomponent",
-  "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple Web Component that Obfuscates Email address in HTML source.",
-  "source": "index.ts",
-  "main": "./dist/index.js",
+  "source": "./index.ts",
   "types": "./dist/types.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "targets": {
     "main": {
-      "context": "browser",
+      "optimize": true
+    },
+    "module": {
       "optimize": true
     }
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && parcel build"
+    "build": "npm run clean && parcel build --no-source-maps",
+    "prepublishOnly": "npm run build"
   },
   "author": "Rumaan K<hey@rumaan.dev>",
   "license": "MIT",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.js",
+      "types": "./dist/types.d.ts"
     }
   },
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ],
   "files": [
     "dist"
   ],
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "keywords": [
     "email obfuscator",
     "webcomponent"

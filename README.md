@@ -42,13 +42,14 @@ For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.htm
 
 Framework Usages:
 - [Vue](/demo/vue/) - [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
+- [React](/demo/react/) - [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
 
 ## TODOS
 
 - [ ] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
 - [ ] Export webcomponent types
 - [ ] Tests
-- [ ] Readme with examples using in React, Vue etc.
+- [x] Readme with examples using in React, Vue etc.
 
 ## Credits
 

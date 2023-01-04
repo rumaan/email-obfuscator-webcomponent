@@ -35,3 +35,10 @@ footer {
   justify-content: center;
   gap: 1rem;
 }
+
+.examples {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-block-start: 2rem;
+}

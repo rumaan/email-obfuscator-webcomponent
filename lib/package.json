@@ -2,7 +2,6 @@
   "name": "email-obfuscator-webcomponent",
   "version": "0.0.4-beta-3",
   "description": "A simple Web Component that Obfuscates Email address in HTML source.",
-  "source": "./index.ts",
   "type": "module",
   "main": "./dist/index.cjs",
   "types": "./dist/types.d.ts",

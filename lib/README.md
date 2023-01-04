@@ -20,6 +20,12 @@ npm install email-obfuscator-webcomponent
 # yarn
 yarn add email-obfuscator-webcomponent
 ```
+or in browser end of `<body>` tag 
+
+```html
+<script type="module" src="https://unpkg.com/email-obfuscator-webcomponent@latest"></script>
+
+```
 
 1. Generate the Encoded image [here](https://creativetechguy.com/utilities/emailobfuscator) and save the image into your public/assets directory
 

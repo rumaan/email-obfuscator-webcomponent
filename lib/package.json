@@ -1,16 +1,15 @@
 {
   "name": "email-obfuscator-webcomponent",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple Web Component that Obfuscates Email address in HTML source.",
   "source": "./index.ts",
-  "types": "./dist/types.d.ts",
+  "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
+  "types": "./dist/types.d.ts",
   "targets": {
     "main": {
-      "optimize": true
-    },
-    "module": {
+      "context": "browser",
+      "outputFormat": "esmodule",
       "optimize": true
     }
   },
@@ -23,7 +22,7 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
+      "import": "./dist/index.js",
       "default": "./dist/index.js",
       "types": "./dist/types.d.ts"
     }

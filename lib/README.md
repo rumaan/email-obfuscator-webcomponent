@@ -24,10 +24,10 @@ yarn add email-obfuscator-webcomponent
 or in browser end of `<body>` tag
 
 ```html
-<script
-  type="module"
-  src="https://unpkg.com/email-obfuscator-webcomponent@latest"
-></script>
+<script type="module">
+  import EmailAddress from "https://cdn.skypack.dev/email-obfuscator-webcomponent";
+  customElements.define("email-address", EmailAddress);
+</script>
 ```
 
 1. Generate the Encoded image [here](https://creativetechguy.com/utilities/emailobfuscator) and save the image into your public/assets directory
@@ -35,7 +35,7 @@ or in browser end of `<body>` tag
 2. In your html/Component template add the webcomponent with the encoded image source.
 
 ```html
-<obfuscated-email-address src="./encoded-image.png"></obfuscated-email-address>
+<email-address src="./encoded-image.png"></email-address>
 ```
 
 For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.html#example-vite-config) for example, you might need to configure the bundler so it plays well with web components.
@@ -50,26 +50,27 @@ Framework Usages:
 You can use `slot="loading"` to customize the loading state of the component.
 
 ```html
-<obfuscated-email-address src="./encoded-image.png">
+<email-address src="./encoded-image.png">
   <span slot="loading">...</span>
-</obfuscated-email-address>
+</email-address>
 ```
 
 You can customize the anchor link using `::part()` pseudo-element selector to match the `link` part.
 
 ```css
-obfuscated-email-address::part(link) {
+email-address::part(link) {
   display: inline-block;
   color: green;
 }
 ```
 
 Or if you want to use a custom tag instead of the default anchor text you can use the `slot="link"` like so:
+
 ```html
-<obfuscated-email-address src="https://rumaan.dev/jkvu1o0le24.png">
+<email-address src="https://rumaan.dev/jkvu1o0le24.png">
   <span slot="loading">...</span>
   <span slot="link"> This is a customised mailto link </span>
-</obfuscated-email-address>
+</email-address>
 ```
 
 ## TODOS

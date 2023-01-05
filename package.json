@@ -1,6 +1,6 @@
 {
   "name": "email-obfuscator-webcomponent-demo",
-  "version": "0.0.4-beta-10",
+  "version": "0.0.4-beta-11",
   "description": "Web Component that Obfuscates Email address in HTML source.",
   "scripts": {
     "dev": "npm run build:lib && npm install && vite --config ./demo/vite.config.ts",

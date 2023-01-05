@@ -107,5 +107,3 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     wrapper!.replaceWith(anchor);
   }
 }
-
-customElements.define("obfuscated-email-address", ObfuscatedEmailAddress);

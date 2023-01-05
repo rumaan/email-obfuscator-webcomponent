@@ -1,2 +1,2 @@
-export { ObfuscatedEmailAddress } from "./element";
+export { ObfuscatedEmailAddress as default } from "./element";
 export { decodeImage } from "./decoder";

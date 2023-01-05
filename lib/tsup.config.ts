@@ -5,8 +5,7 @@ export default defineConfig({
   outDir: "./dist",
   minify: true,
   clean: true,
-  target: "esnext",
-  format: ["esm", "cjs", "iife"],
+  target: "es2015",
+  format: ["esm"],
   dts: true,
-  sourcemap: true,
 });

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "email-obfuscator-webcomponent";
+import EmailAddress from "email-obfuscator-webcomponent";
+
+customElements.define("email-address", EmailAddress);
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <main style={{ display: "flex", flexDirection: "column" }}>
       <h1>Hello From React!</h1>
-      <obfuscated-email-address src="https://rumaan.dev/jkvu1o0le24.png"></obfuscated-email-address>
+      <email-address src="https://rumaan.dev/jkvu1o0le24.png"></email-address>
 
       <div
         style={{

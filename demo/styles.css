@@ -19,17 +19,17 @@ main {
 
 h1,
 p,
-obfuscated-email-address {
+email-address {
   text-align: center;
 }
 
-obfuscated-email-address {
+email-address {
   display: grid;
   place-content: center;
   font-size: 1.5rem;
 }
 
-obfuscated-email-address::part(link) {
+email-address::part(link) {
   display: inline-block;
   color: green;
   text-decoration: none;

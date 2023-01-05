@@ -6,7 +6,8 @@ export class ObfuscatedEmailAddress extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    const shadowRoot = this.attachShadow({ mode: "open" });
+    shadowRoot.innerHTML = this.template;
   }
 
   get styles() {
@@ -20,42 +21,26 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     `;
   }
 
+  get template() {
+    return `
+      <style>
+        ${this.styles}
+      </style>
+      <div id="wrapper-${this.#id}" class="wrapper">
+        <div class="loading">
+          <slot name="loading">Loading...</slot>
+        </div>
+        <img id="img-${this.#id}" class="hidden" crossorigin="anonymous">
+        <canvas id="canvas-${this.#id}" class="hidden"></canvas>
+      </div>
+    `.trim();
+  }
+
   static get observedAttributes() {
     return ["src"];
   }
 
   connectedCallback() {
-    const wrapper: HTMLDivElement = document.createElement("div");
-    wrapper.id = `wrapper-${this.#id}`;
-    wrapper.classList.add("wrapper");
-
-    const style = document.createElement("style");
-    style.textContent = this.styles;
-
-    const defaultLoading: HTMLDivElement = document.createElement("div");
-    defaultLoading.textContent = "Loading...";
-    defaultLoading.classList.add("loading");
-
-    const img: HTMLImageElement = document.createElement("img");
-    img.id = `img-${this.#id}`;
-    img.crossOrigin = "anonymous";
-    img.classList.add("image", "hidden");
-
-    const canvas: HTMLCanvasElement = document.createElement("canvas");
-    canvas.id = `canvas-${this.#id}`;
-    canvas.classList.add("hidden");
-
-    const loadingSlot: HTMLSlotElement = document.createElement("slot");
-    loadingSlot.name = "loading";
-    loadingSlot.assign(defaultLoading);
-
-    wrapper.appendChild(style);
-    wrapper.appendChild(loadingSlot);
-    wrapper.appendChild(img);
-    wrapper.appendChild(canvas);
-
-    this.shadowRoot?.append(wrapper);
-
     this.init();
   }
 
@@ -118,7 +103,7 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     wrapper.innerHTML = link;
     const anchor = wrapper.firstElementChild!;
     anchor.setAttribute("part", "link");
-    anchor.innerHTML = `<slot name="link">${anchor.textContent}</slot>`
+    anchor.innerHTML = `<slot name="link">${anchor.textContent}</slot>`;
     wrapper!.replaceWith(anchor);
   }
 }

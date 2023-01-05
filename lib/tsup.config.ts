@@ -7,5 +7,6 @@ export default defineConfig({
   clean: true,
   target: "esnext",
   format: ["esm", "cjs", "iife"],
-  dts: true
+  dts: true,
+  sourcemap: true,
 });

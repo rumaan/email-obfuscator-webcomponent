@@ -29,6 +29,12 @@ obfuscated-email-address {
   font-size: 1.5rem;
 }
 
+obfuscated-email-address::part(link) {
+  display: inline-block;
+  color: green;
+  text-decoration: none;
+}
+
 footer {
   padding-block-start: 40px;
   display: flex;

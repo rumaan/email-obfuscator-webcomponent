@@ -25,28 +25,32 @@ export class ObfuscatedEmailAddress extends HTMLElement {
   }
 
   connectedCallback() {
-    const wrapper = document.createElement("div");
+    const wrapper: HTMLDivElement = document.createElement("div");
     wrapper.id = `wrapper-${this.#id}`;
     wrapper.classList.add("wrapper");
 
     const style = document.createElement("style");
     style.textContent = this.styles;
 
-    const loading = document.createElement("div");
-    loading.textContent = "Loading...";
-    loading.classList.add("loading");
+    const defaultLoading: HTMLDivElement = document.createElement("div");
+    defaultLoading.textContent = "Loading...";
+    defaultLoading.classList.add("loading");
 
-    const img = document.createElement("img");
+    const img: HTMLImageElement = document.createElement("img");
     img.id = `img-${this.#id}`;
     img.crossOrigin = "anonymous";
     img.classList.add("image", "hidden");
 
-    const canvas = document.createElement("canvas");
+    const canvas: HTMLCanvasElement = document.createElement("canvas");
     canvas.id = `canvas-${this.#id}`;
     canvas.classList.add("hidden");
 
+    const loadingSlot: HTMLSlotElement = document.createElement("slot");
+    loadingSlot.name = "loading";
+    loadingSlot.assign(defaultLoading);
+
     wrapper.appendChild(style);
-    wrapper.appendChild(loading);
+    wrapper.appendChild(loadingSlot);
     wrapper.appendChild(img);
     wrapper.appendChild(canvas);
 
@@ -60,7 +64,9 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     oldValue: string | null,
     currentValue: string | null
   ) {
-    this.src = currentValue ?? "";
+    if (name === "src") {
+      this.src = currentValue ?? "";
+    }
   }
 
   init() {
@@ -97,7 +103,7 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     }
   }
 
-  decodeImageAndUpdateDOM({
+  async decodeImageAndUpdateDOM({
     canvas,
     img,
     wrapper,
@@ -106,17 +112,13 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     img: HTMLImageElement;
     wrapper: HTMLDivElement;
   }) {
-    const link = decodeImage(canvas, img);
-    if (link) {
-      canvas.remove();
-      img.remove();
-      const loadingEl = wrapper.querySelector(".loading") as HTMLDivElement;
-      loadingEl.classList.remove("loading");
-      loadingEl.innerHTML = link;
-    } else {
-      console.error("Some error occurred while decoding the image");
-      // TODO: throw exception
-    }
+    const link = await decodeImage(canvas, img);
+    canvas.remove();
+    img.remove();
+    wrapper.innerHTML = link;
+    const anchor = wrapper.firstElementChild!;
+    anchor.setAttribute("part", "link");
+    wrapper!.replaceWith(anchor);
   }
 }
 

@@ -44,10 +44,18 @@ Framework Usages:
 - [Vue](/demo/vue/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
 - [React](/demo/react/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
 
+## Customizable Slots
+You can use `slot="loading"` to customize the loading state of the component.
+```html
+<obfuscated-email-address src="./encoded-image.png">
+  <span slot="loading">...</span>
+</obfuscated-email-address>
+```
+
 ## TODOS
 
-- [ ] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
-- [ ] Export webcomponent types
+- [x] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
+- [x] Export webcomponent types
 - [ ] Tests
 - [x] Readme with examples using in React, Vue etc.
 

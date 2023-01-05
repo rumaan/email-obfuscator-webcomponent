@@ -9,12 +9,18 @@
 export function decodeImage(
   canvas: HTMLCanvasElement,
   img: HTMLImageElement
-): string | null {
-  let width = img.width;
-  canvas.width = img.width;
-  canvas.height = img.height;
-  const ctx = canvas.getContext("2d", { willReadFrequently: true });
-  if (ctx) {
+): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let width = img.width;
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+
+    if (!ctx) {
+      reject("Failed to getContext on the Canvas");
+      return;
+    }
+
     ctx.drawImage(img, 0, 0);
     let decodedAnchor = "";
     let block = "";
@@ -35,10 +41,11 @@ export function decodeImage(
         y++;
       }
     }
+
     block = block.replace(/ÿ/g, "");
 
     try {
-      while (1) {
+      for (;;) {
         block = atob(block);
       }
     } catch (g) {
@@ -52,8 +59,6 @@ export function decodeImage(
       }
     }
 
-    return decodedAnchor;
-  }
-
-  return null;
+    resolve(decodedAnchor);
+  });
 }

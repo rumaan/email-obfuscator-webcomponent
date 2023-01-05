@@ -41,13 +41,33 @@ or in browser end of `<body>` tag
 For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.html#example-vite-config) for example, you might need to configure the bundler so it plays well with web components.
 
 Framework Usages:
+
 - [Vue](/demo/vue/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
 - [React](/demo/react/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
 
+## Customizable Slots
+
+You can use `slot="loading"` to customize the loading state of the component.
+
+```html
+<obfuscated-email-address src="./encoded-image.png">
+  <span slot="loading">...</span>
+</obfuscated-email-address>
+```
+
+You can customize the anchor link using `::part()` pseudo-element selector to match the `link` part.
+
+```css
+obfuscated-email-address::part(link) {
+  display: inline-block;
+  color: green;
+}
+```
+
 ## TODOS
 
-- [ ] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
-- [ ] Export webcomponent types
+- [x] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
+- [x] Export webcomponent types
 - [ ] Tests
 - [x] Readme with examples using in React, Vue etc.
 

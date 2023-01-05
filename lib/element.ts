@@ -118,6 +118,7 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     wrapper.innerHTML = link;
     const anchor = wrapper.firstElementChild!;
     anchor.setAttribute("part", "link");
+    anchor.innerHTML = `<slot name="link">${anchor.textContent}</slot>`
     wrapper!.replaceWith(anchor);
   }
 }

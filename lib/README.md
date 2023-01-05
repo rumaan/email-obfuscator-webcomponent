@@ -41,14 +41,34 @@ or in browser end of `<body>` tag
 For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.html#example-vite-config) for example, you might need to configure the bundler so it plays well with web components.
 
 Framework Usages:
+
 - [Vue](/demo/vue/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
 - [React](/demo/react/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
 
 ## Customizable Slots
+
 You can use `slot="loading"` to customize the loading state of the component.
+
 ```html
 <obfuscated-email-address src="./encoded-image.png">
   <span slot="loading">...</span>
+</obfuscated-email-address>
+```
+
+You can customize the anchor link using `::part()` pseudo-element selector to match the `link` part.
+
+```css
+obfuscated-email-address::part(link) {
+  display: inline-block;
+  color: green;
+}
+```
+
+Or if you want to use a custom tag instead of the default anchor text you can use the `slot="link"` like so:
+```html
+<obfuscated-email-address src="https://rumaan.dev/jkvu1o0le24.png">
+  <span slot="loading">...</span>
+  <span slot="link"> This is a customised mailto link </span>
 </obfuscated-email-address>
 ```
 

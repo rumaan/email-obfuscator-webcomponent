@@ -64,6 +64,14 @@ obfuscated-email-address::part(link) {
 }
 ```
 
+Or if you want to use a custom tag instead of the default anchor text you can use the `slot="link"` like so:
+```html
+<obfuscated-email-address src="https://rumaan.dev/jkvu1o0le24.png">
+  <span slot="loading">...</span>
+  <span slot="link"> This is a customised mailto link </span>
+</obfuscated-email-address>
+```
+
 ## TODOS
 
 - [x] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link

@@ -3,6 +3,7 @@ import { decodeImage } from "./decoder";
 export class ObfuscatedEmailAddress extends HTMLElement {
   src: string = "";
   #id: string = Math.random().toString().substring(2);
+  lazy: boolean = false;
 
   constructor() {
     super();
@@ -37,11 +38,20 @@ export class ObfuscatedEmailAddress extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["src"];
+    return ["src", "lazy"];
   }
 
   connectedCallback() {
-    this.init();
+    if (this.lazy) {
+      requestIdleCallback(
+        () => {
+          this.init();
+        },
+        { timeout: 4000 }
+      );
+    } else {
+      this.init();
+    }
   }
 
   attributeChangedCallback(
@@ -51,6 +61,9 @@ export class ObfuscatedEmailAddress extends HTMLElement {
   ) {
     if (name === "src") {
       this.src = currentValue ?? "";
+    }
+    if (name === "lazy") {
+      this.lazy = Boolean(currentValue);
     }
   }
 
@@ -104,6 +117,8 @@ export class ObfuscatedEmailAddress extends HTMLElement {
     const anchor = wrapper.firstElementChild!;
     anchor.setAttribute("part", "link");
     anchor.innerHTML = `<slot name="link">${anchor.textContent}</slot>`;
-    wrapper!.replaceWith(anchor);
+    requestAnimationFrame(() => {
+      wrapper!.replaceWith(anchor);
+    });
   }
 }

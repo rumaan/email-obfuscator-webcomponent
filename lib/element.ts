@@ -1,3 +1,4 @@
+import "./polyfills";
 import { decodeImage } from "./decoder";
 
 export class ObfuscatedEmailAddress extends HTMLElement {

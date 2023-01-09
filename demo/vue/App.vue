@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import encodedImg from "../vbvfro8215e.png?url";
 const counter = ref<number>(0);
 </script>
 
@@ -7,7 +8,7 @@ const counter = ref<number>(0);
   <main>
     <h1>Hello from Vue!</h1>
     <email-address
-      src="https://rumaan.dev/jkvu1o0le24.png"
+      :src="encodedImg"
     ></email-address>
     <div class="counter">
       <button @click="counter--">-</button>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import EmailAddress from "email-obfuscator-webcomponent";
+import encodedImg from "../vbvfro8215e.png?url";
 
 customElements.define("email-address", EmailAddress);
 
@@ -9,7 +10,7 @@ function App() {
   return (
     <main style={{ display: "flex", flexDirection: "column" }}>
       <h1>Hello From React!</h1>
-      <email-address src="https://rumaan.dev/jkvu1o0le24.png"></email-address>
+      <email-address src={encodedImg}></email-address>
 
       <div
         style={{

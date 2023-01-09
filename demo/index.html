@@ -17,12 +17,16 @@
         present in the source (HTML/JS).
       </p>
 
-      <email-address lazy="true" src="https://rumaan.dev/jkvu1o0le24.png">
+      <email-address lazy="true"  data-testid="component">
         <span slot="loading">...</span>
         <span slot="link">
           This is a customised mailto link
         </span>
       </email-address>
+      <script type="module">
+        import encodedImg from "./vbvfro8215e.png?url"; // temp: so we can import public assets into html in vite
+        document.querySelector("email-address").src = encodedImg;
+      </script>
       <div class="examples">
         <a href="./vue/index.html">Vue Example</a>
         <a href="./react/index.html">React Example</a>

@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 
 export default defineConfig({
+  server: {
+    port: 3333,
+  },
   root: "demo",
   optimizeDeps: {
     exclude: ["email-obfuscator-webcomponent"] // Don't consider this as part of demo source code

@@ -77,7 +77,7 @@ Or if you want to use a custom tag instead of the default anchor text you can us
 
 - [x] Expose [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) to customise link
 - [x] Export webcomponent types
-- [ ] Tests
+- [-] Tests
 - [x] Readme with examples using in React, Vue etc.
 
 ## Credits

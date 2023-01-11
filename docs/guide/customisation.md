@@ -29,7 +29,7 @@ Here's how it would look like:
 
 ### Custom Link Slot
 
-By Default this slot shows the email address the email address as text
+By Default this slot shows the email address as text
 
 ```html
 <slot name="link">email@example.com</slot>

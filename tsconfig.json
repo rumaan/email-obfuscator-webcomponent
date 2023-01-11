@@ -4,16 +4,31 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "useDefineForClassFields": true,
-    // Required in Vue projects
-    "jsx": "preserve",
     "noImplicitThis": true,
-    "strict": true,
-    "isolatedModules": true,
     "preserveValueImports": true,
     "importsNotUsedAsValues": "error",
-    "target": "ESNext",
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  }
+    "target": "ESNext",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": [
+    "docs/**/*.vue",
+    "docs/**/*.ts",
+    "docs/**/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

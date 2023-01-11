@@ -1,0 +1,2 @@
+# How Does it work?
+The email address you want to obfuscator is encoded into an image file using [Email Obfuscator](https://creativetechguy.com/utilities/emailobfuscator). This image is then loaded into the webcomponent where it is drawn onto a hidden canvas and the data is decoded from it. All this is technically resource intensive for scrape bots since they would have to download/load the encoded image, run the script that decoded the image and renders the email address onto the DOM.

@@ -1,6 +1,6 @@
 {
   "name": "email-obfuscator-webcomponent",
-  "version": "0.0.4-beta-14",
+  "version": "0.0.4-beta-15",
   "description": "A simple Web Component that Obfuscates Email address in HTML source.",
   "type": "module",
   "main": "./dist/index.esm.js",

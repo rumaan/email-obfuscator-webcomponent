@@ -42,8 +42,8 @@ For some frameworks like [Vue](https://vuejs.org/guide/extras/web-components.htm
 
 Framework Usages:
 
-- [Vue](/demo/vue/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/vue/index.html)
-- [React](/demo/react/) · [Demo](https://email-obfuscator-webcomponent-demo.vercel.app/react/index.html)
+- [Vue](/demo/vue/) 
+- [React](/demo/react/) 
 
 ## Customizable Slots
 

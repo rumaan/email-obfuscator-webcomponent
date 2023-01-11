@@ -1,6 +1,6 @@
 {
   "name": "email-obfuscator-webcomponent-demo",
-  "version": "0.0.4-beta-14",
+  "version": "0.0.4-beta-15",
   "description": "Web Component that Obfuscates Email address in HTML source.",
   "type": "module",
   "scripts": {
